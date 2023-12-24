@@ -1,0 +1,20 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          productdock:
+            client-id: "productdock"
+            client-secret: "productdock"
+            client-name: "Productdock Security"
+            provider: "spring"
+            scope: "openid, profile"
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-authentication-method: "client_secret_basic"
+            authorization-grant-type: "authorization_code"
+        provider:
+          spring:
+            issuer-uri: "http://localhost:9090"
+  threads:
+    virtual:
+      enabled: true

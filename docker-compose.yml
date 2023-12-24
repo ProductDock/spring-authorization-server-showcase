@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+
+  postgres-auth:
+    image: postgres:15.4
+    restart: always
+    environment:
+      - POSTGRES_DB=authservice
+      - POSTGRES_USER=authservice-rw
+      - POSTGRES_PASSWORD=authservice-rw
+    ports:
+      - '5432:5432'
+
+  postgres-resources:
+    image: postgres:15.4
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5433:5432'
+
+volumes:
+  db:
+    driver: local
