@@ -1,29 +1,4 @@
-#  https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.security.oauth2.authorization-server
 spring:
-  security:
-    oauth2:
-      authorizationserver:
-        client:
-          productdock:
-            registration:
-              client-id: "productdock"
-              # bcrypt of productdock
-              client-secret: "{bcrypt}$2a$10$aXhyiUX2incAVeTnN85tueTYgUkqH/hh86i4Ex9FaeoRAyTU71n4i"
-              client-authentication-methods:
-                - "client_secret_basic"
-              authorization-grant-types:
-                - "authorization_code"
-                - "refresh_token"
-                - "client_credentials"
-              redirect-uris:
-                - "http://127.0.0.1/login/oauth2/code/productdock"
-              scopes:
-                - "openid"
-                - "profile"
-                - "email"
-                - "phone"
-                - "address"
-            require-authorization-consent: true
   threads:
     virtual:
       enabled: true
