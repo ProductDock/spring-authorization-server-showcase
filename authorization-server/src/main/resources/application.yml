@@ -7,9 +7,8 @@ spring:
     password: authservice-rw
     url: jdbc:postgresql://localhost:5432/authservice
 jwk:
-  key:
-    id: custom-key-id
-    private: classpath:private_key.pem
-    public: classpath:public_key.pem
+  persistence:
+    password: password
+    salt: 73616C74
 server:
   port: 9090
